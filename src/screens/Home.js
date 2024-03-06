@@ -112,7 +112,7 @@ const Home = () => {
             </View>
           </View>
         </View>
-        {/* {loader ? (
+        {loader ? (
           <View style={styles.loaderView}>
             <ActivityIndicator color={color.white} size={'large'} />
           </View>
@@ -126,7 +126,7 @@ const Home = () => {
             />
             <ImageGrid data={data} />
           </>
-        )} */}
+        )}
         <Modal visible={modleVisible} transparent>
           <TouchableOpacity style={styles.modalContainer} onPress={()=>setModalVisible(false)}>
             <View style={styles.modalInnerContainer}>
