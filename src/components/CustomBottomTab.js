@@ -23,7 +23,7 @@ const CustomBottomTab = ({navigation, state}) => {
             style={styles.img(state.index === 0)}
             source={imagePath.HOME}
           />
-          <Text style={styles.labelTxt}>Home</Text>
+          {state.index === 0 ? <Text style={styles.labelTxt}>Home</Text> : null}
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tab(state.index === 1)}
@@ -31,7 +31,9 @@ const CustomBottomTab = ({navigation, state}) => {
             onPress(state.routes[1], state.index === 1);
           }}>
           <Image style={styles.img(state.index === 1)} source={imagePath.DOC} />
-          <Text style={styles.labelTxt}>Account</Text>
+          {state.index === 1 ? (
+            <Text style={styles.labelTxt}>Account</Text>
+          ) : null}
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tab(state.index === 2)}
@@ -39,7 +41,9 @@ const CustomBottomTab = ({navigation, state}) => {
             onPress(state.routes[2], state.index === 2);
           }}>
           <Image style={styles.img(state.index === 2)} source={imagePath.PEN} />
-          <Text style={styles.labelTxt}>Rewards</Text>
+          {state.index === 2 ? (
+            <Text style={styles.labelTxt}>Rewards</Text>
+          ) : null}
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tab(state.index === 3)}
@@ -50,7 +54,9 @@ const CustomBottomTab = ({navigation, state}) => {
             style={styles.img(state.index === 3)}
             source={imagePath.REWARDS}
           />
-          <Text style={styles.labelTxt}>Order</Text>
+          {state.index === 3 ? (
+            <Text style={styles.labelTxt}>Order</Text>
+          ) : null}
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.tab(state.index === 4)}
@@ -61,7 +67,7 @@ const CustomBottomTab = ({navigation, state}) => {
             style={styles.img(state.index === 4)}
             source={imagePath.USER}
           />
-          <Text style={styles.labelTxt}>User</Text>
+          {state.index === 4 ? <Text style={styles.labelTxt}>User</Text> : null}
         </TouchableOpacity>
       </View>
     </View>
