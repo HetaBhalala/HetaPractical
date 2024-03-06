@@ -7,4 +7,8 @@ export const imagePath = {
     CART:require('../assets/png/cart.png'),
     MENU:require('../assets/png/menu.png'),
     USER:require('../assets/png/user.png'),    
+    HOME:require('../assets/png/home.png'),    
+    REWARDS:require('../assets/png/gift.png'),    
+    DOC:require('../assets/png/google-docs.png'),    
+    PEN:require('../assets/png/pencil.png'),    
 }

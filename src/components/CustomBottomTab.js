@@ -14,17 +14,55 @@ const CustomBottomTab = ({navigation, state}) => {
   return (
     <View style={styles.container}>
       <View style={styles.innerContainer}>
-        {state.routes.map((route, index) => (
-          <TouchableOpacity
-            style={styles.tab(state.index === index )}
-            key={index}
-            onPress={() => onPress(route, state.index === index)}>
-            <Image style={styles.img(state.index === index )} source={imagePath.USER} />
-            {state.index === index ? (
-              <Text style={{paddingLeft: 10}}>{route.name}</Text>
-            ) : null}
-          </TouchableOpacity>
-        ))}
+        <TouchableOpacity
+          style={styles.tab(state.index === 0)}
+          onPress={() => {
+            onPress(state.routes[0], state.index === 0);
+          }}>
+          <Image
+            style={styles.img(state.index === 0)}
+            source={imagePath.HOME}
+          />
+          <Text style={styles.labelTxt}>Home</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.tab(state.index === 1)}
+          onPress={() => {
+            onPress(state.routes[1], state.index === 1);
+          }}>
+          <Image style={styles.img(state.index === 1)} source={imagePath.DOC} />
+          <Text style={styles.labelTxt}>Account</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.tab(state.index === 2)}
+          onPress={() => {
+            onPress(state.routes[2], state.index === 2);
+          }}>
+          <Image style={styles.img(state.index === 2)} source={imagePath.PEN} />
+          <Text style={styles.labelTxt}>Rewards</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.tab(state.index === 3)}
+          onPress={() => {
+            onPress(state.routes[3], state.index === 3);
+          }}>
+          <Image
+            style={styles.img(state.index === 3)}
+            source={imagePath.REWARDS}
+          />
+          <Text style={styles.labelTxt}>Order</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.tab(state.index === 4)}
+          onPress={() => {
+            onPress(state.routes[4], state.index === 4);
+          }}>
+          <Image
+            style={styles.img(state.index === 4)}
+            source={imagePath.USER}
+          />
+          <Text style={styles.labelTxt}>User</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -49,11 +87,11 @@ const styles = StyleSheet.create({
     marginTop: 6,
     flexDirection: 'row',
   },
-  img:bool=>( {
+  img: bool => ({
     width: 28,
     height: 28,
     resizeMode: 'contain',
-    tintColor:bool ? color.black : color.white
+    tintColor: bool ? color.black : color.white,
   }),
   tab: bool => ({
     height: 44,
@@ -64,4 +102,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: bool ? spacing.base : 0,
   }),
+  labelTxt: {paddingLeft: 10},
 });

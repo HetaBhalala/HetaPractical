@@ -13,12 +13,14 @@ function BottomTab() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        tabBar={(props: any) => (
-          <CustomBottomTab
-            {...props}
-            tabStyle={{borderTopLeftRadius: 30, borderTopRightRadius: 30}}
-          />
-        )}>
+        tabBarOptions={{
+          style: {
+            borderTopLeftRadius: 30,
+            borderTopRightRadius: 30,
+            backgroundColor: '#000000', // Add background color if needed
+          },
+        }}
+        tabBar={(props: any) => <CustomBottomTab {...props} />}>
         <Tab.Screen
           name="Home"
           component={Home}
